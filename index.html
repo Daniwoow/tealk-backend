@@ -2,10 +2,17 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tealk</title>
+
     <style>
-        body {
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #4facfe, #00f2fe);
             color: white;
@@ -17,35 +24,50 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 500px;
+            padding: 20px;
         }
 
         h1 {
-            font-size: 48px;
+            font-size: 56px;
             margin-bottom: 10px;
         }
 
-        p {
+        .subtitle {
             font-size: 20px;
             margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .description {
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            opacity: 0.85;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
         input {
-            padding: 12px;
-            width: 70%;
-            border: none;
+            padding: 14px;
             border-radius: 8px;
-            margin-right: 10px;
+            border: none;
+            font-size: 16px;
         }
 
         button {
-            padding: 12px 20px;
-            border: none;
+            padding: 14px;
             border-radius: 8px;
+            border: none;
             background: #ffffff;
             color: #333;
-            cursor: pointer;
             font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
         button:hover {
@@ -53,24 +75,39 @@
         }
 
         .footer {
-            margin-top: 30px;
+            margin-top: 25px;
             font-size: 14px;
             opacity: 0.8;
         }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 40px;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>🚀 Tealk</h1>
-        <p>Sua rede social está chegando...</p>
 
-        <div>
+        <p class="subtitle">
+            Conectando pessoas, criando conversas significativas.
+        </p>
+
+        <p class="description">
+            Uma rede social pensada para conexões mais confortáveis e naturais,
+            especialmente para pessoas neurodivergentes.
+        </p>
+
+        <div class="form">
             <input type="email" placeholder="Digite seu email">
-            <button>Quero participar</button>
+            <button>Quero entrar na lista</button>
         </div>
 
         <div class="footer">
-            Conectando pessoas, criando conversas 💬
+            Em breve disponível 💬
         </div>
     </div>
 </body>
