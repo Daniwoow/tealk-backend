@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tealk | Landing Page</title>
+    <title>Tealk | Conexões Reais</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Lexend:wght@300;500;800&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;800&display=swap" rel="stylesheet">
 
     <style>
-        /* --- ESTILO GERAL DA PÁGINA --- */
+        /* --- ESTILO GERAL DA PÁGINA (Baseado na versão anterior) --- */
         * {
             margin: 0;
             padding: 0;
@@ -18,8 +18,9 @@
         }
 
         body {
+            /* Cores calmas e fundo neutro para focar no conteúdo */
             font-family: 'Lexend', sans-serif;
-            background-color: #f0f4f0; /* Um verde sálvia bem clarinho e calmo */
+            background-color: #f8f9fa; /* Um cinza/branco muito suave */
             color: #2d3436;
             display: flex;
             justify-content: center;
@@ -30,105 +31,128 @@
         }
 
         .container {
+            /* O "Card" acolhedor */
             max-width: 600px;
             background: white;
-            padding: 50px 30px;
-            border-radius: 40px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            padding: 60px 40px;
+            border-radius: 32px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        /* --- ESTILOS DOS LOGOS (O QUE VOCÊ ME PEDIU) --- */
-        .logo-display {
-            margin-bottom: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 30px;
-        }
-
-        .temp-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #b2bec3;
-        }
-
-        /* Opção 1: Bolha (Orgânico) */
-        .logo-bubble {
-            font-family: 'Fredoka', sans-serif;
-            font-size: 54px;
-            font-weight: 700;
-            display: flex;
-            justify-content: center;
-            gap: 2px;
-        }
-        .logo-bubble span:nth-child(odd) { color: #4facfe; transform: translateY(-3px); }
-        .logo-bubble span:nth-child(even) { color: #55efc4; transform: translateY(2px); }
-
-        /* Opção 2: Escrito à mão */
-        .logo-hand {
-            font-family: 'Patrick Hand', cursive;
-            font-size: 60px;
-            color: #2d3436;
-            text-decoration: underline dotted #fab1a0;
-        }
-
-        /* Opção 3: Moderno Dinâmico */
-        .logo-modern {
-            font-family: 'Lexend', sans-serif;
-            font-size: 50px;
+        /* --- O NOVO LOGO: OPÇÃO 3 (Tech & Dinâmico) --- */
+        .logo {
+            font-family: 'Lexend', sans-serif; /* Mesma fonte, mas com peso 800 */
+            font-size: 56px;
             font-weight: 800;
-            background: linear-gradient(135deg, #4facfe, #fab1a0);
+            margin-bottom: 25px;
+            letter-spacing: -2px; /* Letras mais próximas para um visual moderno */
+            
+            /* Efeito de Gradiente no Texto */
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #fab1a0 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            
+            /* Um leve brilho para dar profundidade */
+            filter: drop-shadow(0px 4px 8px rgba(79, 172, 254, 0.25));
+            
+            display: inline-block; /* Necessário para o gradiente funcionar bem */
         }
 
-        /* --- RESTO DA LANDING PAGE --- */
-        h1 { font-size: 28px; margin-bottom: 15px; color: #2d3436; }
-        .description { font-size: 18px; color: #636e72; margin-bottom: 35px; line-height: 1.6; }
-        
-        .form { display: flex; flex-direction: column; gap: 12px; }
-        input { padding: 18px; border-radius: 15px; border: 2px solid #f1f1f1; font-size: 16px; outline: none; }
-        input:focus { border-color: #4facfe; }
-        
-        button { 
-            padding: 18px; border-radius: 15px; border: none; 
-            background: #2d3436; color: white; font-weight: bold; 
-            cursor: pointer; transition: 0.3s; 
+        /* --- RESTO DA LANDING PAGE (Baseado na versão anterior) --- */
+        h1 {
+            color: #2d3436;
+            font-size: 32px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            font-weight: 500;
         }
-        button:hover { background: #000; transform: scale(1.02); }
+
+        .description {
+            font-size: 18px;
+            color: #636e72;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input {
+            padding: 18px;
+            border-radius: 16px;
+            border: 2px solid #eee;
+            font-size: 16px;
+            background: #fdfdfd;
+            transition: 0.3s;
+            outline: none;
+            font-family: 'Lexend', sans-serif;
+            font-weight: 300;
+        }
+
+        input:focus {
+            border-color: #4facfe; /* Cor de foco combinando com o início do gradiente */
+        }
+
+        button {
+            padding: 18px;
+            border-radius: 16px;
+            border: none;
+            background: #2d3436; /* Botão escuro para contraste */
+            color: white;
+            font-weight: 500;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            font-family: 'Lexend', sans-serif;
+        }
+
+        button:hover {
+            background: #000;
+            transform: translateY(-2px); /* Efeito suave de elevação */
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #b2bec3;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Responsividade para telas pequenas */
+        @media (max-width: 480px) {
+            .container {
+                padding: 40px 20px;
+            }
+            .logo { font-size: 44px; }
+            h1 { font-size: 26px; }
+            .description { font-size: 16px; }
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        
-        <div class="logo-display">
-            <div>
-                <p class="temp-label">Opção 1: Amigável</p>
-                <div class="logo-bubble"><span>T</span><span>e</span><span>a</span><span>l</span><span>k</span></div>
-            </div>
-            <div>
-                <p class="temp-label">Opção 2: Humano</p>
-                <div class="logo-hand">Tealk</div>
-            </div>
-            <div>
-                <p class="temp-label">Opção 3: Tech Dinâmico</p>
-                <div class="logo-modern">Tealk</div>
-            </div>
-        </div>
+        <div class="logo">Tealk</div>
 
-        <h1>Um lugar para conversas reais.</h1>
+        <h1>Um lugar onde a conversa flui no seu tempo.</h1>
+
         <p class="description">
-            Uma rede social pensada para o conforto de pessoas neurodivergentes, focada em conexões genuínas.
+            Criando uma rede social acolhedora para mentes neurodivergentes fortalecerem laços e habilidades de comunicação.
         </p>
 
         <div class="form">
-            <input type="email" placeholder="Seu e-mail para a lista de espera">
-            <button>Quero fazer parte</button>
+            <input type="email" placeholder="Seu melhor e-mail...">
+            <button>Quero saber quando lançar</button>
         </div>
 
+        <div class="footer">
+            Em construção com carinho 🌿
+        </div>
     </div>
 </body>
 </html>
