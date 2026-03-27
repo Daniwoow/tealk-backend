@@ -24,4 +24,9 @@ public class InteresseService {
     public void deletarInteresse(Long id){
         interesseRepository.deleteById(id);
     }
+
+    public Interesse buscarPorId(Long id){
+        return interesseRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Interesse não encontrado"));
+    }
 }

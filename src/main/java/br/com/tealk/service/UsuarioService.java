@@ -1,5 +1,6 @@
 package br.com.tealk.service;
 
+import br.com.tealk.model.Interesse;
 import br.com.tealk.model.Usuario;
 import br.com.tealk.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
@@ -7,14 +8,29 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
-
+    private final InteresseService interesseService; // adiciona aqui
     public Usuario salvarUsuario(Usuario usuario){
+
+        //Verifica se veio algum interesse no JSON
+        if(usuario.getInteresses() != null){
+            //Para cada interesse que veio só com id
+            List<Interesse> interesses = usuario.getInteresses()
+                    .stream()
+                    .map(i -> interesseService.buscarPorId(i.getId())) //busca cada um no banco pelo id
+                    .collect(Collectors.toList());
+
+            //ubstitui a lista incompleta pela lista completa do banco
+        usuario.setInteresses(interesses);
+        }
+
+        //salva o user com interesses
         return usuarioRepository.save(usuario);
     }
 
